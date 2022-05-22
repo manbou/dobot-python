@@ -78,7 +78,8 @@ parsers = {
     132: [lambda x: struct.unpack('<Bff', bytearray(x)), None, lambda x: struct.unpack('<Q', bytearray(x))[0], lambda x: list(struct.pack('<Bff', *x))],
     133: [lambda x: struct.unpack('<B' * 2, bytearray(x)), None, None, None],
     134: [lambda x: struct.unpack('<BH', bytearray(x)), None, None, None],
-    135: [None, None, lambda x: struct.unpack('<Q', bytearray(x))[0], lambda x: list(struct.pack('<BBf', *x))],
+    135: [None, None, lambda x: struct.unpack('<Q', bytearray(x))[0], lambda x: list(struct.pack('<BBI', *x))],
+    136: [None, None, lambda x: struct.unpack('<Q', bytearray(x))[0], lambda x: list(struct.pack('<BBII', *x))],
     137: [lambda x: struct.unpack('<B' * 3, bytearray(x)), None, lambda x: struct.unpack('<Q', bytearray(x))[0], lambda x: list(struct.pack('<' + 'B' * 3, *x))],
     138: [lambda x: struct.unpack('<B', bytearray(x)), None, lambda x: struct.unpack('<Q', bytearray(x))[0], lambda x: list(struct.pack('<' + 'B' * 3, *x))],
     # Calibration

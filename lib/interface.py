@@ -335,6 +335,10 @@ class Interface:
         request = Message([0xAA, 0xAA], 2, 135, True, queue, [index, enable, speed], direction='out')
         return self.send(request)
 
+    def set_extended_motor_velocity_and_distance(self, index, enable, speed, distance, queue=True):
+        request = Message([0xAA, 0xAA], 2, 136, True, queue, [index, enable, speed, distance], direction='out')
+        return self.send(request)
+
     def get_color_sensor(self, index):
         request = Message([0xAA, 0xAA], 2, 137, False, False, [], direction='out')
         return self.send(request)
